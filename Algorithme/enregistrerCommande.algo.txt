@@ -1,0 +1,37 @@
+inclure "defines.h"
+
+Procedure enregistrerCommande(
+    entier identifiantTypePain, 
+    entier quantite, 
+    chaine *nom, 
+    chaine *prenom, 
+    chaine sexe, 
+    chaine *numeroDeTelephone, 
+    chaine *commune,
+    chaine *quartier,
+    chaine *avenue,
+    entier numero
+
+)
+Debut
+    FILE *fichier = fopen("commandes.txt", "a");
+
+    chaine typePain[TAILLE_MAX];
+    recupererTypeDePain(identifiantTypePain, typePain);
+
+    ecrire dans fichier :  
+        typePain + 
+        quantite + 
+        0 +
+        nom +
+        prenom +
+        (sexe == 0 ? 'H' : 'F') +
+        numeroDeTelephone +
+        commune +
+        quartier +
+        avenue +
+        numero
+    ;
+
+    fermer(fichier);
+fin

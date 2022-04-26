@@ -1,0 +1,86 @@
+ALGO PRINCIPALE
+
+variables: choixUtilisateur
+
+ecrire ("Bonjour ce programme est la pour vous aider a gerer les activites courantes d'une boulangerie \n")
+
+faire
+    ecrire ("\nChoisir un element : \n\n1) lister toutes les commandes \n2) lister les commandes en attente \n3) lister les marchandises livrees \n4) Commander une marchandise \n5) Confirmer une livraison \n0) Appuyer sur 0 pour quitter\n\nR) ")
+
+    char typeDePain[TAILLE_MAX]
+
+    lire choixUtilisateur
+
+    si (choixUtilisateur == 1)
+        listerToutesLesCommandes()
+
+    sinon si (choixUtilisateur == 2)
+        listerCommandesEnAttente()
+
+        ecrire ("Voici toutes les commandes listees \n")
+    
+    sinon si (choixUtilisateur == 3)
+        listerCommandesEnLivrees()
+    
+    sinon si (choixUtilisateur == 4)
+        int quantite
+
+        struct Client client
+
+        ecrire "Voici les types de pains disponibles : \n"
+        afficherTypeDePains()
+
+        ecrire "Quel type de pain voulez-vous commander ? "
+        lire &choixUtilisateur
+
+        ecrire "En quelle quantite ? "
+        lire &quantite
+
+        ecrire "Entrer le sexe du client (0 pour homme 1 pour femme): "
+        lire client.sexe
+
+        ecrire "Entrer le nom du client : "
+        lire client.nom
+
+        ecrire "Entrer le prenom du client : "
+        lire client.prenom
+
+        ecrire "Entrer le numero de telephone du client : "
+        lire client.numeroDeTelephone
+
+        ecrire "Entrer la commune du client : "
+        lire client.adresse.commune
+
+        ecrire "Entrer le quartier du client : "
+        lire client.adresse.quartier
+
+        ecrire "Entrer l'avenue du client : "
+        lire client.adresse.avenue
+
+        ecrire "Entrer le numero de l'avenue du client : "
+        lire client.adresse.numero
+
+        enregistrerCommande(
+            choixUtilisateur,
+            quantite,
+            client.nom,
+            client.prenom,
+            client.sexe,
+            client.numeroDeTelephone,
+            client.adresse.commune,
+            client.adresse.quartier,
+            client.adresse.avenue,
+            client.adresse.numero)
+        ecrire ("Votre commande a ete enregistree \n")
+    
+    sinon si (choixUtilisateur == 5)
+        ecrire ("Entrer le numero de la livraison : ")
+        lire choixUtilisateur)
+
+        mettreAJourCommande(choixUtilisateur)
+
+        ecrire ("Votre commande a ete mise a jour")
+    Fin si
+ tant que (choixUtilisateur != 0)
+
+Fin

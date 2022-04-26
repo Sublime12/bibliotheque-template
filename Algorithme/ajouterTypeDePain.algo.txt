@@ -1,0 +1,8 @@
+Procedure ajouterTypeDePain(chaine *nouveauTypePain, entier prix)
+Debut
+    variable FILE *fichier = fopen("typePain.txt", "a");
+
+    Ecrire dans fichier nouveauTypePain + prix ;
+    
+    fclose(fichier);
+Fin

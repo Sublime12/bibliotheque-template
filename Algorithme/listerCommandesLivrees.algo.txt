@@ -1,0 +1,26 @@
+inclure "defines.h"
+
+Procedure listerCommandesLivrees()
+Debut
+    FILE *fichier = fopen("commandes.txt", "r");
+    variable chaine ligneARecuperer[TAILLE_MAX];
+    variable entier estLivree = 0, i = 0;
+
+    variable chaine nullTypeDePain[TAILLE_MAX];
+    variable entier nullVariable = 0;
+
+    Tant que (fgets(ligneARecuperer, TAILLE_MAX, fichier))
+        i++;
+        Lire dans fichier (ligneARecuperer, "%s %i %i %i",
+            nullTypeDePain,
+            &nullVariable,
+            &nullVariable,
+            &estLivree);
+
+        if (estLivree)
+            ecrire  i  + ") " +ligneARecuperer
+        Fin si
+    Fin tant que
+
+    fclose(fichier);
+Fin

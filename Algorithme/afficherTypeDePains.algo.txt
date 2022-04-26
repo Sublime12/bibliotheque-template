@@ -1,0 +1,12 @@
+Procedure afficherTypeDePains()
+    variables : FILE *fichier <-- fopen("typePain.txt", "r");
+    variables chaine nomPain[TAILLE_MAX];
+
+    int i <-- 0;
+    tant que (fgets(nomPain, TAILLE_MAX, fichier))
+        i <-- i + 1;
+            ecrire i + "" + nomPain;
+        fin si
+
+    ecrire ("\n") //pour le retour a la ligne
+fin tant que

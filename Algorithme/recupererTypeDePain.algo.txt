@@ -1,0 +1,26 @@
+#include"defines.h"
+
+Function recupererTypeDePain(entier ligne, chaine *typeDePain) : renvoie un entier
+Debut
+    FILE *fichier = fopen("typePain.txt", "r");
+    chaine chaineARecuperer[TAILLE_MAX];
+
+    ligne--;
+
+    entier i = 0;
+    Tant que (fgets(chaineARecuperer, TAILLE_MAX, fichier) != NULL)
+        si  (i == ligne)
+            Pour entier j allant 0 a strlen(chaineARecuperer) 
+                si (chaineARecuperer[j] == '\n')
+                    chaineARecuperer[j] = ' ';
+                Fin si
+            Fin pour
+
+            strcpy(typeDePain, chaineARecuperer);
+            retourner 1;
+        Fin si
+        
+        i <-- i + 1;
+    Fin tant que
+    
+Fin
