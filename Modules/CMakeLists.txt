@@ -1,0 +1,9 @@
+add_library(
+    modules
+    consultation.c 
+    document.c 
+    emprunt.c
+    membre.c
+    rapport.c 
+    utilisateur.c 
+)

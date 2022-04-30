@@ -1,10 +1,45 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include "dependencies/mariadb-connector-c-3.2.6-src/include/mysql.h"
+#include <mysql/mysql.h>
 
 #include"constantes.h"
 
+void hello();
+void printHello();
+
 int main()
 {
+
+    MY_SQL *conn;
+
+    conn = mysql_init(conn);
+    if (conn == NULL)
+    {
+        fprintf(stderr, "unable to initialize connection struct\n");
+        exit(1);
+    }
+
+    if (!mysql_real_connect(
+        conn,                   // Connection
+        "localhost",            // Host
+        "root",                 // User account
+        NULL,                   // User password
+        NULL,                   // Default database
+        3306,                   // Port number
+        NULL,                   // Path to socket file
+        0                       // Additional options
+    ))
+    {
+        // Report the failed-connection error & close the handle
+        fprintf(stderr, "Error connecting to Server: %s\n", mysql_error(conn));
+        mysql_close(conn);
+        exit(1);
+    }
+
+    mysql_query(conn, "CREATE DATABASE dbtest2");
+
+    printHello();
 
     int choixUtilisateur;
 
