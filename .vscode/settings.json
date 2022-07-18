@@ -2,6 +2,9 @@
     "files.associations": {
         "defines.h": "c",
         "constantes.h": "c",
-        "mysql.h": "c"
+        "mysql.h": "c",
+        "stdio.h": "c",
+        "connection.h": "c",
+        "stdlib.h": "c"
     }
 }

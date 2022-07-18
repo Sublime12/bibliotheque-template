@@ -1,1 +1,0 @@
-void ajouterTypeDePain(char *nouveauTypePain, int prix);

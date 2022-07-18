@@ -1,1 +1,0 @@
-int recupererTypeDePain(int ligne, char * typeDePain);

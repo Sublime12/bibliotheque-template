@@ -1,7 +1,0 @@
-pain-au-miel 500
-pain-carre 300
-pain-gris 1000
-pistolet 200
-pain-au-lait 1500
-pain-nathan 840
-pain-jojo 500

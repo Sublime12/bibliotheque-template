@@ -1,1 +1,3 @@
 #define TAILLE_MAX 200
+#define TAILLE_QUERY 2000
+#define TAILLE_CHAINE 256

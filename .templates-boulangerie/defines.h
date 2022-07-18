@@ -1,1 +1,0 @@
-#define TAILLE_MAX 200
