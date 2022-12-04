@@ -1,3 +1,7 @@
+Pour compiler et executer vous devez etre sur Centos 8 et installer les librairies de mysql pour C.
+En plus vous devez creer une base de données qui correspond au ficher `Dump Copy.sql`
+
+
 Ce programme permet de gerer une bibliotheque en console 
 Dans les modules il y a plusieurs fichiers sous modules correspondant a leurs responsabilites 
 
